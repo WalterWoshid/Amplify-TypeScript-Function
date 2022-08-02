@@ -2,7 +2,13 @@
 
 ---
 
-# Usage:
+## Usage:
+
+1. Create a new Amplify function: `amplify function add`
+2. Replace contents of your new functions `src` folder with this project<br>
+   (You can keep the old `index.js` so it can copy the `Amplify Params` comment)
+
+<br>
 
 From your Amplify project root, run the mock command:
 
