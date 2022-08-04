@@ -5,8 +5,8 @@
 ## Usage:
 
 1. Create a new Amplify function: `amplify function add`
-2. Replace contents of your new functions `src` folder with this project<br>
-   (You can keep the old `index.js` so it can copy the `Amplify Params` comment)
+2. Remove all contents from your new functions `src` folder, but keep the `index.js` file (so it can copy the 'Amplify Params' comment)
+3. Add all files from this project to the `src` folder
 
 <br>
 
