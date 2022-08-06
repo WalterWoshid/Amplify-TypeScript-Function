@@ -1,2 +1,4 @@
 [*]
 indent_size = 2
+ij_typescript_use_semicolon_after_statement = true
+ij_javascript_use_semicolon_after_statement = true
