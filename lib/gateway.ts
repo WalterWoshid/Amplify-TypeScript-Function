@@ -31,7 +31,7 @@ type LambdaHandlerCallback = (
 ) => Promise<LambdaResponse>;
 
 type LambdaResponse = {
-  message: Object,
+  message: any,
   statusCode?: number,
   stack?: string
 }
