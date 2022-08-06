@@ -1,4 +1,4 @@
-import { lambdaHandler } from '@/lib/gateway';
+import { lambdaHandler, handleError } from '@/lib/gateway';
 import '@/lib/extensions';
 
 module.exports.handler = lambdaHandler(async (event, context) => {
@@ -14,11 +14,6 @@ module.exports.handler = lambdaHandler(async (event, context) => {
       statusCode: 200
     };
   } catch (e) {
-    // Handle error
-    return {
-      message: e.message,
-      statusCode: 500,
-      stack: e.stack
-    };
+    return handleError(e);
   }
 });

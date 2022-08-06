@@ -35,3 +35,11 @@ type LambdaResponse = {
   statusCode?: number,
   stack?: string
 }
+
+export function handleError(error: ErrorWithStatusCode): LambdaResponse {
+  return {
+    message: error.message,
+    statusCode: error.statusCode || 500,
+    stack: error.stack
+  };
+}
