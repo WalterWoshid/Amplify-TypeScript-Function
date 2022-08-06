@@ -20,7 +20,11 @@
     "types": [
       "node",
     ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
     "removeComments": false,
   },
 }
-  

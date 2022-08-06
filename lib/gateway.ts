@@ -1,0 +1,37 @@
+import { APIGatewayProxyEvent, APIGatewayProxyHandler, Context } from 'aws-lambda';
+
+// Add cors header
+const cors = {
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "*"
+  }
+};
+
+export function lambdaHandler(lambdaHandlerCallback: LambdaHandlerCallback): APIGatewayProxyHandler {
+  return async (event, context, callback) => {
+    const handlerResult = await lambdaHandlerCallback(event, context);
+
+    const result = {
+      statusCode: handlerResult.statusCode || 200,
+      body: JSON.stringify(handlerResult.message),
+      stack: handlerResult.stack,
+      ...cors,
+    };
+
+    callback(null, result);
+
+    return result;
+  };
+}
+
+type LambdaHandlerCallback = (
+  event: APIGatewayProxyEvent,
+  context: Context
+) => Promise<LambdaResponse>;
+
+type LambdaResponse = {
+  message: Object,
+  statusCode?: number,
+  stack?: string
+}

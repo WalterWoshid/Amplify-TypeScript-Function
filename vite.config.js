@@ -4,7 +4,7 @@ import { generateAmplifyComment } from './lib/amplify-comment';
 
 export default defineConfig({
   esbuild: {
-    // Add the amplify comment to the top of the file
+    // Add the Amplify comment to the top of the file
     banner: generateAmplifyComment(),
   },
   build: {
@@ -26,4 +26,9 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, '.'),
+    }
+  }
 })
