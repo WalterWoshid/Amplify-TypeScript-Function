@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { generateAmplifyComment } from './lib/amplify-comment';
 
 export default defineConfig({
@@ -30,5 +31,15 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, '.'),
     }
-  }
+  },
+  plugins: [
+    {
+      ...nodeResolve({
+        preferBuiltins: true,
+        browser: true,
+      }),
+      enforce: 'pre',
+      apply: 'build'
+    }
+  ]
 })
