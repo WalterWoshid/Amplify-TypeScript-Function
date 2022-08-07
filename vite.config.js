@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { nodeResolve } from '@rollup/plugin-node-resolve'
-import { generateAmplifyComment } from './lib/amplify-comment';
+import { generateAmplifyComment } from './lib/amplify/params-comment';
 
 export default defineConfig({
   esbuild: {

@@ -8,4 +8,4 @@ declare global {
     return JSON.stringify(value, null, 2);
   };
   
-  export default JSON;
+  export {};

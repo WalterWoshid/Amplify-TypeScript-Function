@@ -1,4 +1,4 @@
-import { lambdaHandler, handleError } from '@/lib/gateway';
+import { lambdaHandler, handleError } from '@/lib/amplify/gateway';
 import '@/lib/extensions';
 
 module.exports.handler = lambdaHandler(async (event, context) => {

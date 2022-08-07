@@ -1,4 +1,4 @@
-import { existsSync,readFileSync } from 'fs';
+import { existsSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 
 const commentStart = '/* Amplify Params - DO NOT EDIT';
