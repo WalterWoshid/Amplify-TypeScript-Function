@@ -17,6 +17,7 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "skipLibCheck": true,
+    "strictNullChecks": true,
     "types": [
       "node",
     ],
